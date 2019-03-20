@@ -1,4 +1,6 @@
 import React from 'react';
+import Button from 'antd/lib/button';
+import './test.less';
 
 export default class Demo extends React.Component {
     constructor(props) {
@@ -11,7 +13,8 @@ export default class Demo extends React.Component {
     render() {
         return (
             <div>
-                <button style={{ color: 'red' }}>click</button>
+                <Button type="primary">Button</Button>
+                <button className='tst' style={{ color: 'red' }}>click</button>
             </div>
         )
     }
