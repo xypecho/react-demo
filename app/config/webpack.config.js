@@ -348,6 +348,8 @@ module.exports = function (webpackEnv) {
                       },
                     },
                   ],
+                  // Ant Design 按需加载
+                  ['import', { libraryName: 'antd', libraryDirectory: 'es', style: true }]
                 ],
                 // This is a feature of `babel-loader` for webpack (not Babel itself).
                 // It enables caching results in ./node_modules/.cache/babel-loader/
