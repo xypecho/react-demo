@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
-import Demo from './pages/demo/demo.jsx';
+import { Button } from 'antd';
 import './App.css';
+import './test.less';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
+        <Button type="primary">Button</Button>
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <Demo></Demo>
-          <p>
+          <p className='test'>
             Edit <code>src/App.js</code> and save to reload.
           </p>
           <a
