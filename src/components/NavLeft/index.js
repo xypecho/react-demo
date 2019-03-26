@@ -7,27 +7,30 @@ const SubMenu = Menu.SubMenu;
 
 export default class NavLeft extends React.Component {
     state = {
-        openKeys: [0],
+        openKeys: ['0'],
         rootSubmenuKeys: []
     };
     componentWillMount() {
         console.log(menuConfig);
+        let arr = [];
         menuConfig.map((item, k) => {
-            this.state.rootSubmenuKeys.push(k);
+            arr.push(k.toString());
+        })
+        this.setState({
+            rootSubmenuKeys: arr
         })
     }
     onOpenChange = (openKeys) => {
-        console.log(openKeys);
-        console.log(this.state.rootSubmenuKeys);
-        // const latestOpenKey = openKeys.find(key => this.state.openKeys.indexOf(key) === -1);
-        // console.log(latestOpenKey);
-        // if (this.rootSubmenuKeys.indexOf(latestOpenKey) === -1) {
-        //     this.setState({ openKeys });
-        // } else {
-        //     this.setState({
-        //         openKeys: latestOpenKey ? [latestOpenKey] : [],
-        //     });
-        // }
+        console.log(this.state.rootSubmenuKeys)
+        const latestOpenKey = openKeys.find(key => this.state.openKeys.indexOf(key) === -1);
+        console.log(latestOpenKey)
+        if (this.state.rootSubmenuKeys.indexOf(latestOpenKey) === -1) {
+            this.setState({ openKeys:['0'] });
+        } else {
+            this.setState({
+                openKeys: latestOpenKey ? [latestOpenKey] : [],
+            });
+        }
     }
     render() {
         return (
@@ -41,8 +44,9 @@ export default class NavLeft extends React.Component {
                     defaultOpenKeys={this.state.openKeys}
                     mode="inline"
                     theme="dark"
-                    openKeys={this.state.openKeys}
-                    onOpenChange={this.onOpenChange}>
+                    // openKeys={this.state.openKeys}
+                    onOpenChange={this.onOpenChange}
+                >
                     {menuConfig.map((item, key) => {
                         if (item.children && item.children.length > 0) {
                             return (
