@@ -21,9 +21,7 @@ export default class NavLeft extends React.Component {
         })
     }
     onOpenChange = (openKeys) => {
-        console.log(this.state.rootSubmenuKeys)
         const latestOpenKey = openKeys.find(key => this.state.openKeys.indexOf(key) === -1);
-        console.log(latestOpenKey)
         if (this.state.rootSubmenuKeys.indexOf(latestOpenKey) === -1) {
             this.setState({ openKeys:['0'] });
         } else {
