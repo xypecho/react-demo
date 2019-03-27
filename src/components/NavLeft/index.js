@@ -15,6 +15,7 @@ export default class NavLeft extends React.Component {
         let arr = [];
         menuConfig.map((item, k) => {
             arr.push(k.toString());
+            return arr;
         })
         this.setState({
             rootSubmenuKeys: arr
