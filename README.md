@@ -7,9 +7,7 @@
 >ps:本项目未执行`yarn eject`暴露内建的配置
 
 ```
-├──  build                               
-├──  config                              
-├──  node_modules                          
+├──  public                                 ---静态资源存放目录
 ├──  src                                    ---核心代码目录
 |   ├──  assets                            
 |   |    ├── images                         ---静态资源存放目录
@@ -22,7 +20,5 @@
 |   |    ├── index.js                       ---封装了一些常用的函数
 |   ├── App.vue                           
 |   ├── main.js                          
-├── .eslintrc                               ---自定义eslint配置文件
-├── package.json     
-......                                      ---其他一些vue脚手架生成的文件就不表述了
+├── config-overrides.js                     ---自定义主题
 ```
