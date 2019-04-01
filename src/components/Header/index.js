@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from '../../axios';
 import { Row, Col, Avatar, Menu, Dropdown } from 'antd';
 import './index.less';
 
@@ -15,10 +16,15 @@ const menu = (
     </Menu>
 );
 export default class Header extends React.Component {
-
+    test = () => {
+        axios.jsonp({ url: 'http://api.map.baidu.com/telematics/v3/weather?location=131&output=json&ak=3p49MVra6urFRGOT9s8UBWr2' }).then(res => {
+            console.log(res);
+        })
+    }
     render() {
         return (
             <div className="header">
+                <button style={{ 'display': 'none' }} onClick={this.test}>click</button>
                 <Row>
                     <Col span={20}></Col>
                     <Col span={4}>
