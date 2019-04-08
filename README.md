@@ -15,10 +15,9 @@
 |   ├──  components                         ---组件存放目录
 |   ├──  pages                              ---页面存放目录(可复用的则封装为组件，不可以的写为页面)
 |   ├──  router                             ---路由
-|   ├──  store                              ---vuex相关的文件
 |   ├──  tools                              
 |   |    ├── index.js                       ---封装了一些常用的函数
-|   ├── App.vue                           
-|   ├── main.js                          
+|   ├── admin.js                            ---根组件
+|   ├── index.js                            ---入口文件
 ├── config-overrides.js                     ---自定义主题
 ```
