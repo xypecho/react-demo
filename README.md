@@ -1,5 +1,9 @@
-# react-demo
-学完react写个demo
+## 运行
+```
+git clone https://github.com/xypecho/react-demo.git
+yarn install
+yarn start
+```
 
 
 ## 项目结构
