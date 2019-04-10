@@ -1,5 +1,6 @@
 import React from 'react';
 import menuConfig from '../../config/menuConfig';
+import { NavLink } from 'react-router-dom';
 import { Menu, Icon } from 'antd';
 import './index.less';
 
@@ -23,7 +24,7 @@ export default class NavLeft extends React.Component {
     onOpenChange = (openKeys) => {
         const latestOpenKey = openKeys.find(key => this.state.openKeys.indexOf(key) === -1);
         if (this.state.rootSubmenuKeys.indexOf(latestOpenKey) === -1) {
-            this.setState({ openKeys:['0'] });
+            this.setState({ openKeys: ['0'] });
         } else {
             this.setState({
                 openKeys: latestOpenKey ? [latestOpenKey] : [],
@@ -51,7 +52,9 @@ export default class NavLeft extends React.Component {
                                 <SubMenu key={key} title={<span><Icon type="mail" /><span>{item.title}</span></span>}>
                                     {item.children.map((v, k) => {
                                         return (
-                                            <Menu.Item key={'item' + key + k}>{v.title}</Menu.Item>
+                                            <Menu.Item key={'item' + key + k}>
+                                                <NavLink to={v.key}>{v.title}</NavLink>
+                                            </Menu.Item>
                                         )
                                     })}
                                 </SubMenu>
