@@ -4,7 +4,7 @@ import Login from './pages/login';
 import Admin from './admin';
 import Buttons from './pages/buttons';
 import Test from './pages/test';
-import NoMatch from './pages/404';
+import NoMatch from './pages/noMatch';
 import { HashRouter, Route, Switch } from 'react-router-dom'
 import { from } from "rxjs";
 
