@@ -2,8 +2,7 @@ import React from "react";
 import App from './App';
 import Login from './pages/login';
 import Admin from './admin';
-import Buttons from './pages/buttons';
-import Test from './pages/test';
+import Buttons from './pages/ui/buttons';
 import NoMatch from './pages/noMatch';
 import { HashRouter, Route, Switch } from 'react-router-dom'
 import { from } from "rxjs";
@@ -14,11 +13,10 @@ export default class MyRouter extends React.Component {
         return (
             <HashRouter>
                 <App>
-                    <Route path='/login' component={Login}></Route>
-                    <Route path='/admin' render={() =>
+                    {/* <Route path='/login' component={Login}></Route> */}
+                    <Route path='/' render={() =>
                         <Admin>
-                            <Route path='/admin/ui/buttons' component={Buttons}></Route>
-                            <Route path='/admin/ui/test' component={Test}></Route>
+                            <Route path='/ui/buttons' component={Buttons}></Route>
                             <Route component={NoMatch}></Route>
                         </Admin>
                     }></Route>
