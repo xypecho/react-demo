@@ -1,14 +1,20 @@
 @import './default.less';
 
-.nav-left{
-    height: calc(100vh);
-    background: @colorR;
-}
 .container{
     background-color: @colorV;
-}
-.content{
-    background-color: @colorM;
-    margin: 24px;
-    font-size: 14px;
+    .nav-left{
+        height: calc(100vh);
+        background: @colorR;
+    }
+    .main{
+        height: 100vh;
+        overflow: auto;
+    }
+    .content{
+        // background-color: @colorM;
+        margin: 24px;
+        font-size: 14px;
+        overflow: auto;
+        position: relative;
+    }
 }

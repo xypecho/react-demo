@@ -16,8 +16,10 @@ export default class MyRouter extends React.Component {
                     {/* <Route path='/login' component={Login}></Route> */}
                     <Route path='/' render={() =>
                         <Admin>
-                            <Route path='/ui/buttons' component={Buttons}></Route>
-                            <Route component={NoMatch}></Route>
+                            <Switch>
+                                <Route path='/ui/buttons' component={Buttons}></Route>
+                                <Route component={NoMatch}></Route>
+                            </Switch>
                         </Admin>
                     }></Route>
                 </App>
