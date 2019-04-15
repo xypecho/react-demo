@@ -43,7 +43,6 @@ export default class NavLeft extends React.Component {
                     defaultOpenKeys={this.state.openKeys}
                     mode="inline"
                     theme="dark"
-                    // openKeys={this.state.openKeys}
                     onOpenChange={this.onOpenChange}
                 >
                     {menuConfig.map((item, key) => {
@@ -62,8 +61,10 @@ export default class NavLeft extends React.Component {
                         } else {
                             return (
                                 <Menu.Item key={key}>
-                                    <Icon type="pie-chart" />
-                                    <span>{item.title}</span>
+                                    <NavLink to={item.key}>
+                                        <Icon type="pie-chart" />
+                                        {item.title}
+                                    </NavLink>
                                 </Menu.Item>
                             )
                         }
