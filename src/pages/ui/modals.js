@@ -11,15 +11,12 @@ export default class Modals extends React.Component {
     }
 
     handleOpen = (type) => {
-        console.log(type);
-        console.log(this.state)
         this.setState({
             [type]: true
         })
     }
 
     handleOk = (e) => {
-        console.log(e);
         this.setState({
             visible: false,
         });
@@ -47,6 +44,53 @@ export default class Modals extends React.Component {
                     onCancel={() => {
                         this.setState({
                             showModal1: false
+                        })
+                    }}
+                >
+                    <p>Some contents...</p>
+                    <p>Some contents...</p>
+                    <p>Some contents...</p>
+                </Modal>
+                <Modal
+                    visible={this.state.showModal2}
+                    title="Title"
+                    onCancel={() => {
+                        this.setState({
+                            showModal2: false
+                        })
+                    }}
+                    footer={[
+                        <Button key="back" >Return</Button>,
+                        <Button key="submit" type="primary">Submit</Button>,
+                    ]}
+                >
+                    <p>Some contents...</p>
+                    <p>Some contents...</p>
+                    <p>Some contents...</p>
+                    <p>Some contents...</p>
+                    <p>Some contents...</p>
+                </Modal>
+                <Modal
+                    title="Basic Modal"
+                    visible={this.state.showModal3}
+                    onCancel={() => {
+                        this.setState({
+                            showModal3: false
+                        })
+                    }}
+                    style={{ top: 20 }}
+                >
+                    <p>Some contents...</p>
+                    <p>Some contents...</p>
+                    <p>Some contents...</p>
+                </Modal>
+                <Modal
+                    title="Basic Modal"
+                    centered
+                    visible={this.state.showModal4}
+                    onCancel={() => {
+                        this.setState({
+                            showModal4: false
                         })
                     }}
                 >
