@@ -2,15 +2,23 @@ import React from 'react';
 import menuConfig from '../../config/menuConfig';
 import { NavLink } from 'react-router-dom';
 import { Menu, Icon } from 'antd';
+import { connect } from 'react-redux';
+import { SwitchMenu } from '../../redux/action';
 import './index.less';
 
 const SubMenu = Menu.SubMenu;
 
-export default class NavLeft extends React.Component {
+class NavLeft extends React.Component {
     state = {
         openKeys: ['0'],
         rootSubmenuKeys: []
     };
+    handleClick = (item) => {
+        const { dispatch } = this.props;
+        // dispatch(SwitchMenu());
+        console.log(item);
+        console.log(item.props.title);
+    }
     componentWillMount() {
         let arr = [];
         menuConfig.map((item, k) => {
@@ -39,11 +47,11 @@ export default class NavLeft extends React.Component {
                     <h1>后台管理系统</h1>
                 </div>
                 <Menu
-                    defaultSelectedKeys={this.state.openKeys}
-                    defaultOpenKeys={this.state.openKeys}
+                    selectedKeys={['/ui/buttons']}
                     mode="inline"
                     theme="dark"
                     onOpenChange={this.onOpenChange}
+                    onClick={this.handleClick}
                 >
                     {menuConfig.map((item, key) => {
                         if (item.children && item.children.length > 0) {
@@ -74,3 +82,4 @@ export default class NavLeft extends React.Component {
         );
     }
 }
+export default connect()(NavLeft);
