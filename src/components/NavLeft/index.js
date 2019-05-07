@@ -13,9 +13,10 @@ class NavLeft extends React.Component {
         openKeys: ['0'],
         rootSubmenuKeys: []
     };
-    handleClick = (item) => {
-        const { dispatch } = this.props;
-        // dispatch(SwitchMenu());
+    handleClick = ({ item }) => {
+        // const { dispatch } = this.props;
+        // dispatch(SwitchMenu(item.props.title));
+        // console.log(item);
         console.log(item);
         console.log(item.props.title);
     }
@@ -47,7 +48,6 @@ class NavLeft extends React.Component {
                     <h1>后台管理系统</h1>
                 </div>
                 <Menu
-                    selectedKeys={['/ui/buttons']}
                     mode="inline"
                     theme="dark"
                     onOpenChange={this.onOpenChange}
@@ -68,7 +68,7 @@ class NavLeft extends React.Component {
                             )
                         } else {
                             return (
-                                <Menu.Item key={key}>
+                                <Menu.Item title={item.title} key={key}>
                                     <NavLink to={item.key}>
                                         <Icon type="pie-chart" />
                                         {item.title}
