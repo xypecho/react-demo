@@ -1,19 +1,17 @@
 import { type } from '../action';
 
-const initialState = {
-    menuName: '首页'
-};
+// const initialState = {
+//     menuName: '首页'
+// };
 
-export default (state = initialState, action) => {
-    switch (action) {
+export default (state, action) => {
+    switch (action.type) {
         case type.SWITCH_MENU:
             return {
                 ...state,
                 menuName: action.menuName
             }
-            break;
-
         default:
-            break;
+            return { ...state };
     }
 }

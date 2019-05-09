@@ -2,6 +2,8 @@ import React from 'react';
 import axios from '../../axios';
 import { Row, Col, Avatar, Menu, Dropdown } from 'antd';
 import './index.less';
+import { connect } from 'react-redux';
+
 
 const menu = (
     <Menu>
@@ -15,7 +17,7 @@ const menu = (
         <Menu.Item key="3">退出登录</Menu.Item>
     </Menu>
 );
-export default class Header extends React.Component {
+class Header extends React.Component {
     test = () => {
         axios.jsonp({ url: 'http://api.map.baidu.com/telematics/v3/weather?location=131&output=json&ak=3p49MVra6urFRGOT9s8UBWr2' }).then(res => {
             console.log(res);
@@ -32,7 +34,7 @@ export default class Header extends React.Component {
                             <Avatar size={45}>admin</Avatar>
                             <Dropdown overlay={menu}>
                                 <span className="ant-dropdown-link" >
-                                    admin
+                                    {this.props.menuName}
                                 </span>
                             </Dropdown>
                         </div>
@@ -42,3 +44,10 @@ export default class Header extends React.Component {
         )
     }
 };
+const mapStatesToProps = state => {
+    console.log(state)
+    return {
+        menuName: state.menuName
+    }
+}
+export default connect(mapStatesToProps)(Header);

@@ -14,11 +14,8 @@ class NavLeft extends React.Component {
         rootSubmenuKeys: []
     };
     handleClick = ({ item }) => {
-        // const { dispatch } = this.props;
-        // dispatch(SwitchMenu(item.props.title));
-        // console.log(item);
-        console.log(item);
-        console.log(item.props.title);
+        const { dispatch } = this.props;
+        dispatch(SwitchMenu(item.props.title));
     }
     componentWillMount() {
         let arr = [];
@@ -59,7 +56,7 @@ class NavLeft extends React.Component {
                                 <SubMenu key={key} title={<span><Icon type="mail" /><span>{item.title}</span></span>}>
                                     {item.children.map((v, k) => {
                                         return (
-                                            <Menu.Item key={'item' + key + k}>
+                                            <Menu.Item key={'item' + key + k} title={v.title}>
                                                 <NavLink to={v.key}>{v.title}</NavLink>
                                             </Menu.Item>
                                         )
