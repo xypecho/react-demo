@@ -11,12 +11,17 @@ yarn start
 >ps:本项目未执行`yarn eject`暴露内建的配置
 
 ```
-├──  public                                 ---静态资源存放目录
-├──  src                                    ---核心代码目录
-|   ├──  assets                            
+├── public                                 
+├── src                                    
+|   ├── axios                               
+|   |   ├── index.js                        ---基于axios封装的jsonp跨域方法
+|   ├── components                          ---组件存放目录
+|   ├── config      
+|   |   ├── menuConfig.js                   ---路由配置文件                    
+|   ├── pages                               ---页面
+|   ├──  assets                             ---静态资源存放目录
 |   |    ├── images                         ---静态资源存放目录
 |   ├──  common                             ---字体图标存放目录
-|   ├──  components                         ---组件存放目录
 |   ├──  pages                              ---页面存放目录(可复用的则封装为组件，不可以的写为页面)
 |   ├──  router                             ---路由
 |   ├──  tools                              
